@@ -93,16 +93,16 @@ extern crate linked_hash_map;
 extern crate serde;
 extern crate yaml_rust;
 
-pub use self::de::{from_reader, from_slice, from_str};
+pub use self::de::{Deserializer, from_reader, from_slice, from_str};
 pub use self::error::{Error, Location, Result};
 pub use self::mapping::Mapping;
 pub use self::ser::{to_string, to_vec, to_writer};
 pub use self::value::{from_value, to_value, Number, Sequence, Value};
 
-mod de;
+pub mod de;
+pub mod ser;
 mod error;
 mod mapping;
 mod number;
 mod path;
-mod ser;
 mod value;

@@ -18,6 +18,7 @@ use serde::ser;
 
 use super::error::{Error, Result};
 
+/// Yaml Serializer
 pub struct Serializer;
 
 impl ser::Serializer for Serializer {

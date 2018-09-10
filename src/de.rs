@@ -28,6 +28,7 @@ use serde::de::{
 use error::{Error, Result};
 use path::Path;
 
+/// Loader
 pub struct Loader {
     events: Vec<(Event, Marker)>,
     /// Map from alias id to index in events.
@@ -73,7 +74,8 @@ enum Event {
     MappingEnd,
 }
 
-struct Deserializer<'a> {
+/// Yaml Deserializer
+pub struct Deserializer<'a> {
     events: &'a [(Event, Marker)],
     /// Map from alias id to index in events.
     aliases: &'a BTreeMap<usize, usize>,
